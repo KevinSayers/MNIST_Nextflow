@@ -17,3 +17,8 @@ Then auto convert a Tensorflow Docker into a Singularity img.
 singularity pull docker://tensorflow/tensorflow:latest-gpu
 
 ```
+
+Running in Nextflow:
+```
+nextflow run mnist.nf
+```
