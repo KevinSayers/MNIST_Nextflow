@@ -1,0 +1,17 @@
+2017-07-15 18:33:26	-	hopeful_kalam	-	e92a19596831436d426b7e4cb2115528	3671d2f7-eac9-4b96-b74d-c661803c0f27	nextflow run mnist.nf
+2017-07-15 18:33:41	1.5s	fervent_goldstine	ERR	6dea5248eee49e89f82b42c7a504504f	e0536195-fb7e-4115-b449-90f7a0e48b15	nextflow run mnist.nf
+2017-07-15 18:34:24	1.8s	grave_hopper	ERR	e09170a2e02a6fe5abe70980e3d718fa	576515c5-568e-475f-a6aa-136a27870ae2	nextflow run mnist.nf
+2017-07-15 18:35:13	1.4s	awesome_swirles	ERR	c911f614249d3f29a1cbc6e26ffc9eb8	0e797402-573e-4b74-9ab1-30f9fe4697d3	nextflow run mnist.nf
+2017-07-15 18:37:40	988ms	silly_golick	ERR	fb7b2902dbf166300f2661f2ee0b5ced	8fc7a1c0-b005-4583-adb5-5681df25caf2	nextflow run mnist.nf
+2017-07-15 18:38:04	1s	prickly_shannon	ERR	5324f9b03caba0e1c29469398a7853e1	5fbe644e-98d5-4bb1-8e36-6c968d0b7648	nextflow run mnist.nf
+2017-07-15 18:40:02	1.4s	sleepy_leavitt	ERR	5324f9b03caba0e1c29469398a7853e1	bcdc5f9f-5e18-4e45-8eea-7505679e668b	nextflow run mnist.nf
+2017-07-15 18:46:30	4.5s	stupefied_bartik	OK	ccc9464be13fffb65732fb6ab97a8993	7a2029a7-fcb9-43f6-879b-bcfa1019f7f1	nextflow run mnist.nf
+2017-07-15 18:47:16	5.1s	reverent_snyder	OK	21eca3b074c3cde29792fb5961e47e09	94a6f246-c9d7-44ab-b2b1-466492bb0872	nextflow run mnist.nf
+2017-07-15 18:47:36	5.4s	clever_brahmagupta	OK	ccc9464be13fffb65732fb6ab97a8993	8ad47aeb-06df-4955-a4e4-58433f2039c1	nextflow run mnist.nf
+2017-07-15 18:59:12	5.1s	sleepy_booth	ERR	69bec040037f3a37b9d2a132cf2582e5	adb1244c-7b45-4403-835b-32938c94b07f	nextflow run mnist.nf
+2017-07-15 19:07:17	4.4s	silly_brahmagupta	ERR	bfac99de928bf9d5a8e729f92a62e520	3ae8bab4-1f88-48e9-8957-2003ef83e29e	nextflow run mnist.nf
+2017-07-15 19:14:58	4s	goofy_kilby	ERR	d3c44e7e6a85741739bc782dcab7721b	6c4a5cf6-c14c-4d5c-a919-76d2baf59195	nextflow run mnist.nf
+2017-07-15 19:15:35	4.7s	sleepy_goldstine	OK	d3c44e7e6a85741739bc782dcab7721b	8e90ecf4-cf0f-4da4-a974-c54e79561416	nextflow run mnist.nf
+2017-07-15 19:16:41	5.2s	cocky_wilson	ERR	d3c44e7e6a85741739bc782dcab7721b	c122d40e-84b2-46a4-8fae-89bfe5d031c7	nextflow run mnist.nf
+2017-07-15 19:18:51	4.7s	sleepy_allen	ERR	d3c44e7e6a85741739bc782dcab7721b	2910c6e4-d536-4d0b-8838-008750d04de8	nextflow run mnist.nf
+2017-07-15 19:21:25	4.5s	modest_morse	OK	d3c44e7e6a85741739bc782dcab7721b	85ae018a-4ccb-4fbf-8e44-b9221c817442	nextflow run mnist.nf

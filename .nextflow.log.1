@@ -1,0 +1,167 @@
+Jul-15 19:18:50.785 [main] DEBUG nextflow.cli.Launcher - $> /home/kevin/bin/nextflow run mnist.nf
+Jul-15 19:18:50.874 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.24.4
+Jul-15 19:18:50.881 [main] INFO  nextflow.cli.CmdRun - Launching `mnist.nf` [sleepy_allen] - revision: d3c44e7e6a
+Jul-15 19:18:50.890 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: nextflow.config
+Jul-15 19:18:50.892 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/kevin/MNIST_Nextflow/nextflow.config
+Jul-15 19:18:51.130 [main] DEBUG nextflow.config.ConfigBuilder - Setting config profile: 'standard'
+Jul-15 19:18:51.182 [main] DEBUG nextflow.Session - Session uuid: 2910c6e4-d536-4d0b-8838-008750d04de8
+Jul-15 19:18:51.183 [main] DEBUG nextflow.Session - Run name: sleepy_allen
+Jul-15 19:18:51.184 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jul-15 19:18:51.194 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.24.4 build 4341
+  Modified: 22-05-2017 11:18 UTC (13:18 CEST)
+  System: Linux 4.9.0-040900-generic
+  Runtime: Groovy 2.4.10 on Java HotSpot(TM) 64-Bit Server VM 1.8.0_131-b11
+  Encoding: UTF-8 (UTF-8)
+  Process: 8586@kevin-XPS-15-9550 [127.0.1.1]
+  CPUs: 8 - Mem: 15.5 GB (1.5 GB) - Swap: 14.6 GB (14.2 GB)
+Jul-15 19:18:51.213 [main] DEBUG nextflow.Session - Work-dir: /home/kevin/MNIST_Nextflow/work [ext2/ext3]
+Jul-15 19:18:51.213 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/kevin/MNIST_Nextflow/bin
+Jul-15 19:18:51.291 [main] DEBUG nextflow.Session - Session start invoked
+Jul-15 19:18:51.294 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jul-15 19:18:51.294 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jul-15 19:18:51.371 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-15 19:18:51.423 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-15 19:18:51.423 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-15 19:18:51.428 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-15 19:18:51.430 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jul-15 19:18:51.434 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.5 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jul-15 19:18:51.437 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jul-15 19:18:51.437 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-15 19:18:51.439 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jul-15 19:18:51.512 [main] DEBUG nextflow.Session - >>> barrier register (process: runTensorflow)
+Jul-15 19:18:51.524 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > runTensorflow -- maxForks: 8
+Jul-15 19:18:51.552 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jul-15 19:18:51.553 [main] DEBUG nextflow.Session - Session await
+Jul-15 19:18:51.567 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - <runTensorflow> Poison pill arrived
+Jul-15 19:18:51.671 [Actor Thread 2] DEBUG nextflow.processor.StateObj - <runTensorflow> State before poison: StateObj[submitted: 1; completed: 0; poisoned: false ]
+Jul-15 19:18:51.774 [Actor Thread 3] INFO  nextflow.Session - [78/3c4c37] Submitted process > runTensorflow
+Jul-15 19:18:51.776 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - <runTensorflow> After stop
+Jul-15 19:18:55.577 [Thread-1] ERROR nextflow.processor.TaskProcessor - Error executing process > 'runTensorflow'
+
+Caused by:
+  Process `runTensorflow` terminated with an error exit status (1)
+
+Command executed:
+
+  python mnist.py --data_dir MNIST_data
+
+Command exit status:
+  1
+
+Command output:
+  gradients/add_grad/tuple/control_dependency: (Identity): /job:localhost/replica:0/task:0/gpu:0
+  gradients/MatMul_grad/MatMul_1: (MatMul): /job:localhost/replica:0/task:0/gpu:0
+  gradients/MatMul_grad/MatMul: (MatMul): /job:localhost/replica:0/task:0/gpu:0
+  gradients/MatMul_grad/tuple/group_deps: (NoOp): /job:localhost/replica:0/task:0/gpu:0
+  gradients/MatMul_grad/tuple/control_dependency_1: (Identity): /job:localhost/replica:0/task:0/gpu:0
+  GradientDescent/update_Variable/ApplyGradientDescent: (ApplyGradientDescent): /job:localhost/replica:0/task:0/gpu:0
+  GradientDescent: (NoOp): /job:localhost/replica:0/task:0/gpu:0
+  _arg_Placeholder_0_0: (_Arg): /job:localhost/replica:0/task:0/cpu:0
+  _arg_Placeholder_1_0_1: (_Arg): /job:localhost/replica:0/task:0/cpu:0
+  GradientDescent/learning_rate: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/add_grad/Shape_1: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/SoftmaxCrossEntropyWithLogits_grad/ExpandDims/dim: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Mean_grad/Maximum/y: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Mean_grad/Const_1: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Mean_grad/Const: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Mean_grad/Shape_2: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Mean_grad/Reshape/shape: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Const: (Const): /job:localhost/replica:0/task:0/gpu:0
+  gradients/Shape: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Slice_2/begin: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Sub_2/y: (Const): /job:localhost/replica:0/task:0/gpu:0
+  concat_1/axis: (Const): /job:localhost/replica:0/task:0/gpu:0
+  concat_1/values_0: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Slice_1/size: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Sub_1/y: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Rank_2: (Const): /job:localhost/replica:0/task:0/gpu:0
+  concat/axis: (Const): /job:localhost/replica:0/task:0/gpu:0
+  concat/values_0: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Slice/size: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Sub/y: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Rank_1: (Const): /job:localhost/replica:0/task:0/gpu:0
+  Rank: (Const): /job:localhost/replica:0/task:0/gpu:0
+  ArgMax_1: (ArgMax): /job:localhost/replica:0/task:0/gpu:0
+  Variable_1: (VariableV2): /job:localhost/replica:0/task:0/gpu:0
+  Variable_1/read: (Identity): /job:localhost/replica:0/task:0/gpu:0
+  Variable: (VariableV2): /job:localhost/replica:0/task:0/gpu:0
+  Variable/read: (Identity): /job:localhost/replica:0/task:0/gpu:0
+  MatMul: (MatMul): /job:localhost/replica:0/task:0/gpu:0
+  add: (Add): /job:localhost/replica:0/task:0/gpu:0
+  ArgMax: (ArgMax): /job:localhost/replica:0/task:0/gpu:0
+  Equal: (Equal): /job:localhost/replica:0/task:0/gpu:0
+  Cast_1: (Cast): /job:localhost/replica:0/task:0/gpu:0
+  Mean_1: (Mean): /job:localhost/replica:0/task:0/gpu:0
+  _arg_Placeholder_0_0: (_Arg): /job:localhost/replica:0/task:0/cpu:0
+  _arg_Placeholder_1_0_1: (_Arg): /job:localhost/replica:0/task:0/cpu:0
+  _retval_Mean_1_0_0: (_Retval): /job:localhost/replica:0/task:0/cpu:0
+  Const_1: (Const): /job:localhost/replica:0/task:0/gpu:0
+  ArgMax_1/dimension: (Const): /job:localhost/replica:0/task:0/gpu:0
+  ArgMax/dimension: (Const): /job:localhost/replica:0/task:0/gpu:0
+  0.9142
+
+Command error:
+  2017-07-15 17:18:54.138551: I tensorflow/core/common_runtime/simple_placer.cc:847] _arg_Placeholder_0_0: (_Arg)/job:localhost/replica:0/task:0/cpu:0
+  2017-07-15 17:18:54.138556: I tensorflow/core/common_runtime/simple_placer.cc:847] _arg_Placeholder_1_0_1: (_Arg)/job:localhost/replica:0/task:0/cpu:0
+  2017-07-15 17:18:54.138563: I tensorflow/core/common_runtime/simple_placer.cc:847] GradientDescent/learning_rate: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138570: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/add_grad/Shape_1: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138576: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/SoftmaxCrossEntropyWithLogits_grad/ExpandDims/dim: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138583: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Mean_grad/Maximum/y: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138590: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Mean_grad/Const_1: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138597: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Mean_grad/Const: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138604: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Mean_grad/Shape_2: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138610: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Mean_grad/Reshape/shape: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138617: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Const: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138624: I tensorflow/core/common_runtime/simple_placer.cc:847] gradients/Shape: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138631: I tensorflow/core/common_runtime/simple_placer.cc:847] Slice_2/begin: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138638: I tensorflow/core/common_runtime/simple_placer.cc:847] Sub_2/y: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138645: I tensorflow/core/common_runtime/simple_placer.cc:847] concat_1/axis: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138652: I tensorflow/core/common_runtime/simple_placer.cc:847] concat_1/values_0: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138659: I tensorflow/core/common_runtime/simple_placer.cc:847] Slice_1/size: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138665: I tensorflow/core/common_runtime/simple_placer.cc:847] Sub_1/y: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138673: I tensorflow/core/common_runtime/simple_placer.cc:847] Rank_2: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138680: I tensorflow/core/common_runtime/simple_placer.cc:847] concat/axis: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138687: I tensorflow/core/common_runtime/simple_placer.cc:847] concat/values_0: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138694: I tensorflow/core/common_runtime/simple_placer.cc:847] Slice/size: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138701: I tensorflow/core/common_runtime/simple_placer.cc:847] Sub/y: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138708: I tensorflow/core/common_runtime/simple_placer.cc:847] Rank_1: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:54.138714: I tensorflow/core/common_runtime/simple_placer.cc:847] Rank: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319714: I tensorflow/core/common_runtime/simple_placer.cc:847] ArgMax_1: (ArgMax)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319748: I tensorflow/core/common_runtime/simple_placer.cc:847] Variable_1: (VariableV2)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319755: I tensorflow/core/common_runtime/simple_placer.cc:847] Variable_1/read: (Identity)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319760: I tensorflow/core/common_runtime/simple_placer.cc:847] Variable: (VariableV2)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319773: I tensorflow/core/common_runtime/simple_placer.cc:847] Variable/read: (Identity)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319783: I tensorflow/core/common_runtime/simple_placer.cc:847] MatMul: (MatMul)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319793: I tensorflow/core/common_runtime/simple_placer.cc:847] add: (Add)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319798: I tensorflow/core/common_runtime/simple_placer.cc:847] ArgMax: (ArgMax)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319804: I tensorflow/core/common_runtime/simple_placer.cc:847] Equal: (Equal)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319810: I tensorflow/core/common_runtime/simple_placer.cc:847] Cast_1: (Cast)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319816: I tensorflow/core/common_runtime/simple_placer.cc:847] Mean_1: (Mean)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319821: I tensorflow/core/common_runtime/simple_placer.cc:847] _arg_Placeholder_0_0: (_Arg)/job:localhost/replica:0/task:0/cpu:0
+  2017-07-15 17:18:55.319826: I tensorflow/core/common_runtime/simple_placer.cc:847] _arg_Placeholder_1_0_1: (_Arg)/job:localhost/replica:0/task:0/cpu:0
+  2017-07-15 17:18:55.319830: I tensorflow/core/common_runtime/simple_placer.cc:847] _retval_Mean_1_0_0: (_Retval)/job:localhost/replica:0/task:0/cpu:0
+  2017-07-15 17:18:55.319836: I tensorflow/core/common_runtime/simple_placer.cc:847] Const_1: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319842: I tensorflow/core/common_runtime/simple_placer.cc:847] ArgMax_1/dimension: (Const)/job:localhost/replica:0/task:0/gpu:0
+  2017-07-15 17:18:55.319848: I tensorflow/core/common_runtime/simple_placer.cc:847] ArgMax/dimension: (Const)/job:localhost/replica:0/task:0/gpu:0
+  Traceback (most recent call last):
+    File "mnist.py", line 80, in <module>
+      tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+    File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/platform/app.py", line 48, in run
+      _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+    File "mnist.py", line 73, in main
+      print (sess(config=tf.ConfigProto(log_device_placement=True)))
+  TypeError: 'InteractiveSession' object is not callable
+
+Work dir:
+  /home/kevin/MNIST_Nextflow/work/78/3c4c37f167197929f42c724eed0ae9
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jul-15 19:18:55.580 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - <runTensorflow> Sending poison pills and terminating process
+Jul-15 19:18:55.582 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: runTensorflow)
+Jul-15 19:18:55.584 [main] DEBUG nextflow.Session - Session await > all process finished
+Jul-15 19:18:55.584 [Thread-1] DEBUG nextflow.Session - Session aborted -- Cause: Process `runTensorflow` terminated with an error exit status (1)
+Jul-15 19:18:55.591 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-15 19:18:55.595 [Thread-1] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jul-15 19:18:55.669 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jul-15 19:18:55.682 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
