@@ -1,0 +1,2 @@
+2017-07-15 19:50:51	4.7s	ecstatic_snyder	OK	d3c44e7e6a85741739bc782dcab7721b	c8d14989-b6b0-43d0-9858-7cae0fcfd6c4	nextflow run mnist.nf
+2017-07-15 19:51:45	4.6s	silly_kilby	OK	d3c44e7e6a85741739bc782dcab7721b	ea794d08-1217-4bf1-a17c-deee57941828	nextflow run mnist.nf
